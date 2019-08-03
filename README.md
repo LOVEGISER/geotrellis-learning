@@ -14,7 +14,6 @@ have `sbt` installed on your system.
 1. 官网地址:https://geotrellis.io/
 2. Githut 地址：https://github.com/locationtech/geotrellis
 3. 应用实例：https://github.com/geotrellis
-4. 
 
 ### Geo Trellis 功能特性：
 

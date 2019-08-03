@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: org.ejml:ejml-core:0.34:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.ejml/ejml-core/jars/ejml-core-0.34.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.ejml/ejml-core/srcs/ejml-core-0.34-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

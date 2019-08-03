@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: systems.uom:systems-common-java8:0.7.2:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/systems.uom/systems-common-java8/bundles/systems-common-java8-0.7.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/systems.uom/systems-common-java8/srcs/systems-common-java8-0.7.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

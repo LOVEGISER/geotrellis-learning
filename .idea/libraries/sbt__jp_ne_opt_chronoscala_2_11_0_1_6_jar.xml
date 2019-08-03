@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: jp.ne.opt:chronoscala_2.11:0.1.6:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/jp.ne.opt/chronoscala_2.11/jars/chronoscala_2.11-0.1.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/jp.ne.opt/chronoscala_2.11/srcs/chronoscala_2.11-0.1.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

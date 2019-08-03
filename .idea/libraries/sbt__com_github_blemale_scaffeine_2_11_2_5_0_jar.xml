@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: com.github.blemale:scaffeine_2.11:2.5.0:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/com.github.blemale/scaffeine_2.11/jars/scaffeine_2.11-2.5.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/com.github.blemale/scaffeine_2.11/srcs/scaffeine_2.11-2.5.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

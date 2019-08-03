@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: co.fs2:fs2-io_2.11:1.0.0:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/co.fs2/fs2-io_2.11/jars/fs2-io_2.11-1.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/co.fs2/fs2-io_2.11/srcs/fs2-io_2.11-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

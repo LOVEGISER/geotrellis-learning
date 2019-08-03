@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: si.uom:si-quantity:0.7.1:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/si.uom/si-quantity/bundles/si-quantity-0.7.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/si.uom/si-quantity/srcs/si-quantity-0.7.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

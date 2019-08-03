@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="sbt: org.jdom:jdom2:2.0.6:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.jdom/jdom2/jars/jdom2-2.0.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

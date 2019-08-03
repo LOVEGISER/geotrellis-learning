@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="sbt: jgridshift:jgridshift:1.0:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/jgridshift/jgridshift/jars/jgridshift-1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

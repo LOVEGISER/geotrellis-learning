@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: com.amazonaws:jmespath-java:1.11.319:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/com.amazonaws/jmespath-java/jars/jmespath-java-1.11.319.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/com.amazonaws/jmespath-java/srcs/jmespath-java-1.11.319-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

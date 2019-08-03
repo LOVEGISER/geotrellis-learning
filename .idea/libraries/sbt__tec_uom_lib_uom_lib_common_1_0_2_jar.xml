@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: tec.uom.lib:uom-lib-common:1.0.2:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/tec.uom.lib/uom-lib-common/bundles/uom-lib-common-1.0.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/tec.uom.lib/uom-lib-common/srcs/uom-lib-common-1.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

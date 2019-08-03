@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: org.locationtech.proj4j:proj4j:1.0.0:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.locationtech.proj4j/proj4j/jars/proj4j-1.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.locationtech.proj4j/proj4j/srcs/proj4j-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

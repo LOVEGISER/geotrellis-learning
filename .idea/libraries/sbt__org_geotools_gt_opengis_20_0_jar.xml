@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: org.geotools:gt-opengis:20.0:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.geotools/gt-opengis/jars/gt-opengis-20.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.geotools/gt-opengis/srcs/gt-opengis-20.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

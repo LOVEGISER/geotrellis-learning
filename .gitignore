@@ -45,9 +45,9 @@ gen
 out
 gen
 .DS_Store
-LICENSE
-project/build.properties
-project/plugins.sbt
+#LICENSE
+#project/build.properties
+#project/plugins.sbt
 project/project/target/config-classes/$0b311b4542a74cbac8b9.cache
 project/project/target/config-classes/$c79c64c1b9c3806135cf.cache
 project/target/config-classes/$0021ee0218e879dd0827.cache

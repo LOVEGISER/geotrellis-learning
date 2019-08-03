@@ -50,7 +50,7 @@ object Main {
   def redTiff(path:String): Unit = {
     val tiffPath: String = dataBasePath+path
     //读取单波段image
-    //val geoTiff: SinglebandGeoTiff = GeoTiffReader.readSingleband(path)
+    //val geoTiff: SinglebandGeoTiff = GeoTiffReader.readSingleband(tiffPath)
     //读取多波段image
     val geoTiff: MultibandGeoTiff = GeoTiffReader.readMultiband(tiffPath)
   }
@@ -61,67 +61,66 @@ object Main {
   //  sbt> project spark-etl
   //  sbt> assembly
   def createTile(): Unit = {
-//    var args = Array[String](
-//      "--input",
-//      dataBasePath+"config/input.json",
-//      "--output",
-//      dataBasePath+"config/output.json",
-//      "--backend-profiles",
-//      dataBasePath+"config/backend-profiles.json"
-//    );
-//    //Logger.getLogger("org").setLevel(Level.ERROR)
-//    System.out.println(args)
-//    implicit val sc = SparkUtils.createSparkContext("ETL", new SparkConf(true).setMaster("local[*]"))
-//    try
-//      Etl.ingest[ProjectedExtent, SpatialKey, Tile](args)
-//    finally {
-//      sc.stop
-//    }
-
+    var args = Array[String](
+      "--input",
+      dataBasePath+"config/input.json",
+      "--output",
+      dataBasePath+"config/output.json",
+      "--backend-profiles",
+      dataBasePath+"config/backend-profiles.json"
+    );
+    //Logger.getLogger("org").setLevel(Level.ERROR)
+    System.out.println(args)
+    implicit val sc = SparkUtils.createSparkContext("ETL", new SparkConf(true).setMaster("local[*]"))
+    try
+      Etl.ingest[ProjectedExtent, SpatialKey, Tile](args)
+    finally {
+      sc.stop
+    }
   }
 //https://www.jianshu.com/p/1eda79747648
   def renderTile(): Unit = {
-
-//    val zoomId = 11  //要读取的图层层级
-//    implicit val sc = SparkUtils.createSparkContext("ReadLayer", new SparkConf(true).setMaster("local[*]"))
-//      val path = dataBasePath+"/110000BJ_L5_TM_1990/title"  //图层文件根目录
-//      val store = FileAttributeStore(path)
-//      val reader = FileLayerReader(path)
-//      val layerId = LayerId("etlTest1", zoomId)  //设置图层名称
-//      val layers: TileLayerRDD[SpatialKey] = reader.read[SpatialKey, Tile, TileLayerMetadata[SpatialKey]](layerId)
-//      //定义色带，非必须
-//      val colorMap1 = ColorMap(Map(
-//        0 -> RGB(0,0,0),
-//        1 -> RGB(255,255,255)
-//      ))
-//      val colorRamp = ColorRamp(RGB(0,0,0), RGB(255,255,255))
-//        .stops(100)
-//        .setAlphaGradient(0xFF, 0xAA)
-//      val outputPath = dataBasePath+"/110000BJ_L5_TM_1990/render/" + zoomId  //图片输出路径
-//      val zoomDir: File = new File(outputPath)
-//      if (!zoomDir.exists()) {
-//        zoomDir.mkdirs()
-//      }
-//      layers.foreach(layer => {
-//        val key = layer._1
-//        val tile = layer._2
-//        val layerPath = outputPath + "/" + key.row + "_" + key.col + ".jpg"
-//        System.out.println(layerPath)
-//        tile.renderJpg(colorRamp).write(layerPath)  //调用渲染方法，colorRamp为非必须参数
-//      })
-//
-//      sc.stop
-
-
+     val zoomId = 11
+    implicit val sc = SparkUtils.createSparkContext("ReadLayer", new SparkConf(true).setMaster("local[*]"))
+      //1:要读取的瓦片数据路径
+     val path = dataBasePath+"/110000BJ_L5_TM_1990/title"  //图层文件根目录
+     val store = FileAttributeStore(path)
+     val reader = FileLayerReader(path)
+     val layerId = LayerId("etlTest1", zoomId)  //设置图层名称和zoom
+     //2：读取图层数据
+     val layers: TileLayerRDD[SpatialKey] = reader.read[SpatialKey, Tile, TileLayerMetadata[SpatialKey]](layerId)
+     //3：定义色带，非必须
+     //   val colorMap1 = ColorMap(Map(
+     //    0 -> RGB(0,0,0),
+     //    1 -> RGB(255,255,255)
+     //  ))
+     val colorRamp = ColorRamp(RGB(0,0,0), RGB(255,255,255))
+       .stops(100)
+       .setAlphaGradient(0xFF, 0xAA)
+     // 4: 定义输出路径，如果没有则创建
+     val outputPath = dataBasePath+"/110000BJ_L5_TM_1990/render/" + zoomId  //图片输出路径
+     val zoomDir: File = new File(outputPath)
+     if (!zoomDir.exists()) {
+         zoomDir.mkdirs()
+      }
+     //5：将瓦片图层数据渲染成jpg并安装规则写入磁盘
+     layers.foreach(layer => {
+       val key = layer._1
+       val tile = layer._2
+       val layerPath = outputPath + "/" + key.row + "_" + key.col + ".jpg"
+       System.out.println(layerPath)
+       tile.renderJpg(colorRamp).write(layerPath)  //调用渲染方法，colorRamp为非必须参数
+     })
+     sc.stop
   }
 
 
 
 
   def main(args: Array[String]): Unit = {
-  //  helloRaster()
-    //createTile()
-    //redTiff("110000BJ_L5_TM_1990/110000BJ_L5_TM_1990.TIF")
+    helloRaster()
+    createTile()
+    redTiff("110000BJ_L5_TM_1990/110000BJ_L5_TM_1990.TIF")
     renderTile()
   }
 }

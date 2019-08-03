@@ -25,20 +25,20 @@ object KernelTest {
 
 
   def main(args: Array[String]): Unit = {
-    //    val geotiff = SinglebandGeoTiff("D:\\IdeaProjects\\ScalaDemo\\data\\pm25.tif")
-    //    geotiff.tile
-    //    val a=1
+    //1：定义随机坐标点
     val pts = (for (i <- 1 to 1000) yield randomPointFeature(extent)).toList
     val kernelWidth: Int = 9
-    /* Gaussian kernel with std. deviation 1.5, amplitude 25 */
+    /* 2：定义高斯和 deviation 1.5, amplitude 25 */
     val kern: Kernel = Kernel.gaussian(kernelWidth, 1.5, 25)
+    //3：基于坐标数据做核计算
     val kde: Tile = pts.kernelDensity(kern, RasterExtent(extent, 700, 400))
+    //4：定义渲染方式
     val colorMap = ColorMap(
       (0 to kde.findMinMax._2 by 4).toArray,
       ColorRamps.HeatmapBlueToYellowToRedSpectrum
     )
-    //
-       kde.renderPng(colorMap).write(dataBasePath+"kerneldata/result.png")  //如果用tiff的话可以带上坐标系信息
+    //5：将计算的结果写入到本地文件
+    kde.renderPng(colorMap).write(dataBasePath+"kerneldata/result.png")
 
     val keyfeatures: Map[SpatialKey, List[PointFeature[Double]]] =
       pts
@@ -123,20 +123,21 @@ object KernelTest {
       p.y + kwidth * ld.cellheight / 2)
   }
 
-  //  def stampPointFeature(
-  //                         tile: MutableArrayTile,
-  //                         tup: (SpatialKey, PointFeature[Double])
-  //                       ): MutableArrayTile = {
-  //    val (spatialKey, pointFeature) = tup
-  //    val tileExtent = ld.mapTransform(spatialKey)
-  //    val re = RasterExtent(tileExtent, tile)
-  //    val result = tile.copy.asInstanceOf[MutableArrayTile]
-  //
-  //    KernelStamper(result, kern)
-  //      .stampKernelDouble(re.mapToGrid(pointFeature.geom), pointFeature.data)
-  //
-  //    result
-  //  }
+    def stampPointFeature(
+                           tile: MutableArrayTile,
+                           tup: (SpatialKey, PointFeature[Double]),
+                            kern:Kernel
+                         ): MutableArrayTile = {
+      val (spatialKey, pointFeature) = tup
+      val tileExtent = ld.mapTransform(spatialKey)
+      val re = RasterExtent(tileExtent, tile)
+      val result = tile.copy.asInstanceOf[MutableArrayTile]
+
+      KernelStamper(result, kern)
+        .stampKernelDouble(re.mapToGrid(pointFeature.geom), pointFeature.data)
+
+      result
+    }
 
 
 }

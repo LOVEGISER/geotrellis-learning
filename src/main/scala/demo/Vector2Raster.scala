@@ -32,15 +32,15 @@ object Vector2Raster {
     val extent:Extent = Extent(80, 15, 140, 40)
     val tl = TileLayout(100, 72, 5, 5)
     val layout = LayoutDefinition(extent, tl)
-    val celltype:CellType=IntCellType
-//    val layerRDD: RDD[(SpatialKey, Tile)] with Metadata[LayoutDefinition] = featureRDD.
-//      rasterize(35, celltype, layout)
-//    val layerResult = layerRDD.collect();
-//    for(sublayer<-layerResult) {
-//      sublayer._2.renderPng(colorMap1).write("D:\\IdeaProjects\\ScalaDemo\\data\\test\\"+sublayer._1+".tif")
-//    }
-//    val stitched = TileLayoutStitcher.stitch(layerResult)._1
-//    stitched.renderPng(colorMap1).write("D:\\IdeaProjects\\ScalaDemo\\data\\test\\result.tif")
+  /*  val celltype:CellType=IntCellType
+    val layerRDD: RDD[(SpatialKey, Tile)] with Metadata[LayoutDefinition] = featureRDD.
+      rasterize(35, celltype, layout)
+    val layerResult = layerRDD.collect();
+    for(sublayer<-layerResult) {
+      sublayer._2.renderPng(colorMap1).write("D:\\IdeaProjects\\ScalaDemo\\data\\test\\"+sublayer._1+".tif")
+    }
+    val stitched = TileLayoutStitcher.stitch(layerResult)._1
+    stitched.renderPng(colorMap1).write("D:\\IdeaProjects\\ScalaDemo\\data\\test\\result.tif")*/
 
 
   }

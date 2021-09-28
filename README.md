@@ -549,7 +549,7 @@ HBase、Cassandra、GeowaveAttributeStore
      val values = ValueReader(uri)
    ```
 
-2. ##### hdfs
+2. ##### Flie
 
    ```scala
    // 2:文件系统数据存储和读取
@@ -560,7 +560,7 @@ HBase、Cassandra、GeowaveAttributeStore
    val rootPath: Path = ""
    ```
 
-3. ##### Flie
+3. ##### HDFS
 
    ```scala
    // 3:HDFS数据存储和读取
